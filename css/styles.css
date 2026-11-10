@@ -1,1 +1,780 @@
-*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#171717;font:14px Arial,Helvetica,sans-serif}.shell{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:245px;background:#171717;color:#fff;padding:25px 17px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;padding:0 8px 35px;font-size:14px;font-weight:900;letter-spacing:.5px}.logo{display:grid;place-items:center;width:43px;height:43px;background:#ffc928;color:#171717;border-radius:10px;font-size:18px}.brand small{display:block;color:#aaa;font-size:8px;letter-spacing:1.5px;margin-top:5px}.nav-title{color:#777;font-size:9px;font-weight:bold;letter-spacing:1.5px;padding:0 10px}.sidebar nav{display:grid;gap:5px}.sidebar nav a{padding:13px 12px;border-radius:6px;color:#bbb;text-decoration:none;font-size:12px;font-weight:bold}.sidebar nav a:hover{background:#292929;color:#fff}.sidebar nav a.active{background:#ffc928;color:#171717}.side-bottom{margin-top:auto;padding:15px 10px;background:#252525;border-radius:7px;color:#ffc928;font-size:10px}.side-bottom small{display:block;color:#aaa;margin:7px 0 0 17px}.main{margin-left:245px}main{margin-left:245px;padding:0 34px 20px;max-width:1700px}.top{height:73px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e9e4db;margin-bottom:30px;color:#999;font-size:11px}.top b{color:#222}.user{color:#34845a}.heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:23px}.heading small,section>small,.section-title small{color:#a47708;font-size:9px;font-weight:900;letter-spacing:1.5px}.heading h1{font-size:29px;margin:8px 0 5px;letter-spacing:-.8px}.heading p{margin:0;color:#777;font-size:12px}.version,.back{font-size:9px;font-weight:bold;letter-spacing:.5px;background:#fff1c8;color:#795800;padding:9px 11px;border-radius:5px;text-decoration:none}.hero{background:#171717;color:#fff;border-radius:11px;padding:31px 38px;display:flex;justify-content:space-between;align-items:center;min-height:215px;overflow:hidden}.hero small{color:#ffc928;font-size:9px;letter-spacing:2px;font-weight:bold}.hero h2{font-size:33px;line-height:1.02;margin:12px 0}.hero em{font-style:normal;color:#ffc928}.hero p{color:#bbb;font-size:11px;margin-bottom:19px}.btn,button{display:inline-block;background:#ffc928;color:#171717;border:0;border-radius:5px;padding:11px 15px;text-decoration:none;font-size:10px;font-weight:bold}.burger{font-size:115px;position:relative;filter:drop-shadow(0 10px 10px #000)}.burger span{position:absolute;right:-7px;bottom:0;background:#e63b2e;border-radius:50%;width:59px;height:59px;display:grid;place-content:center;text-align:center;font-size:9px;font-weight:bold;filter:none}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:17px 0 30px}.stats article,.bottom article,.cols article,.info{background:white;border:1px solid #eae5dc;border-radius:8px;padding:17px;box-shadow:0 6px 20px #20180d08}.stats small{display:block;color:#888;font-size:8px;font-weight:bold;letter-spacing:1px}.stats strong{display:block;font-size:23px;margin:10px 0 5px}.stats label,.stats p{color:#999;font-size:9px}.section{margin:28px 0}.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:13px}.section-title h2,.bottom h2,.cols h2,.info h2{font-size:17px;margin:6px 0 0}.section-title>span{font-size:8px;color:#999;letter-spacing:1px}.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.modules a{background:white;border:1px solid #eae5dc;border-radius:8px;padding:17px;text-decoration:none;color:#171717;box-shadow:0 6px 20px #20180d08}.modules a:hover{border-color:#e6c04e;transform:translateY(-2px)}.modules a>b{display:inline-grid;place-items:center;width:35px;height:35px;background:#fff1c8;border-radius:8px;font-size:19px}.modules a>small{float:right;color:#bbb;font-weight:bold}.modules h3{font-size:12px;margin:13px 0 6px}.modules p{font-size:10px;color:#888;min-height:28px;line-height:1.5}.modules strong{font-size:8px;letter-spacing:1px;color:#997000}.bottom{display:grid;grid-template-columns:1.5fr 1fr;gap:13px;margin:28px 0}.bottom p,.info p{font-size:11px;line-height:1.6;color:#777}.bottom table,table{width:100%;border-collapse:collapse;margin-top:13px}th{text-align:left;color:#999;font-size:8px;letter-spacing:.8px;padding:10px 7px;border-bottom:1px solid #eee}td{font-size:10px;padding:12px 7px;border-bottom:1px solid #f0ede7}i{font-style:normal;background:#eee;color:#666;padding:5px 8px;border-radius:20px;font-size:8px}.green{background:#e7f5ec;color:#26774b}.yellow{background:#fff2c8;color:#8c6500}.green-text{color:#26774b}.info{margin-top:15px;background:#fffdf8;border-left:3px solid #ffc928}.info h2{margin-top:7px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.cols article{padding:21px}.cols p{font-size:11px;color:#777;line-height:1.5}.cols label{display:block;font-size:10px;font-weight:bold;color:#666;margin:14px 0}.cols input,.cols select{display:block;width:100%;padding:10px;border:1px solid #e5e0d7;border-radius:5px;margin-top:6px;background:#fafafa}.hint{font-size:9px;color:#999}.chips{display:flex;gap:8px;margin:14px 0}.chips span,.chips b{font-size:9px;padding:8px 12px;border:1px solid #e5e0d7;border-radius:20px;background:#fff}.chips b{background:#171717;color:#fff}.foods{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.foods article{background:#fff;border:1px solid #eae5dc;border-radius:8px;padding:15px}.foods article>div{height:95px;background:#fff1d3;border-radius:6px;display:grid;place-items:center;font-size:57px;margin-bottom:13px}.foods article small{font-size:8px;color:#a47708;font-weight:bold}.foods h3{font-size:12px}.foods p{font-size:9px;color:#888;min-height:27px;line-height:1.5}.foods article>b{font-size:12px}.foods .add{display:grid;place-content:center;text-align:center;border-style:dashed;box-shadow:none}.foods .add>div{background:transparent;font-size:32px;color:#aa810d;height:auto}.flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px}.flow b{font-size:9px;background:#fff1c8;padding:9px;border-radius:5px}hr{border:0;border-top:1px solid #eee;margin:16px 0}footer{display:flex;justify-content:space-between;border-top:1px solid #e9e4db;padding:17px 0 0;margin-top:28px;color:#aaa;font-size:8px}@media(max-width:1050px){.sidebar{width:205px}main{margin-left:205px;padding:0 20px}.modules,.foods{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.sidebar{width:62px;padding:15px 6px}.brand{padding:0 3px 25px}.brand span:not(.logo),.nav-title,.side-bottom{display:none}.sidebar nav a{font-size:0;text-align:center;padding:13px 3px}.sidebar nav a:first-letter{font-size:18px}main{margin-left:62px;padding:0 12px}.top{font-size:9px}.user{font-size:0}.heading{display:block}.version,.back{display:inline-block;margin-top:12px}.hero{padding:23px}.burger{font-size:72px}.burger span{width:43px;height:43px;font-size:7px}.hero h2{font-size:25px}.bottom,.cols{grid-template-columns:1fr}.modules,.foods{grid-template-columns:1fr 1fr}.stats{gap:8px}.stats article{padding:12px}.stats strong{font-size:18px}footer{display:block;line-height:2}}@media(max-width:440px){.modules,.foods{grid-template-columns:1fr}.hero{display:block}.burger{display:none}.section-title>span{display:none}}
+
+/* =========================================
+   1. CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f7f6f2;
+    color: #171717;
+    font: 14px Arial, Helvetica, sans-serif;
+}
+
+.shell {
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. BARRA LATERAL Y MARCA
+========================================= */
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 245px;
+    background: #171717;
+    color: #fff;
+    padding: 25px 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: white;
+    text-decoration: none;
+    padding: 0 8px 35px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    background: #ffc928;
+    color: #171717;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.brand small {
+    display: block;
+    color: #aaa;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+.nav-title {
+    color: #777;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 0 10px;
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 5px;
+}
+
+.sidebar nav a {
+    padding: 13px 12px;
+    border-radius: 6px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sidebar nav a:hover {
+    background: #292929;
+    color: #fff;
+}
+
+.sidebar nav a.active {
+    background: #ffc928;
+    color: #171717;
+}
+
+.side-bottom {
+    margin-top: auto;
+    padding: 15px 10px;
+    background: #252525;
+    border-radius: 7px;
+    color: #ffc928;
+    font-size: 10px;
+}
+
+.side-bottom small {
+    display: block;
+    color: #aaa;
+    margin: 7px 0 0 17px;
+}
+
+/* =========================================
+   3. CONTENIDO PRINCIPAL
+========================================= */
+
+.main {
+    margin-left: 245px;
+}
+
+main {
+    margin-left: 245px;
+    padding: 0 34px 20px;
+    max-width: 1700px;
+}
+
+.top {
+    height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9e4db;
+    margin-bottom: 30px;
+    color: #999;
+    font-size: 11px;
+}
+
+.top b {
+    color: #222;
+}
+
+.user {
+    color: #34845a;
+}
+
+/* =========================================
+   4. ENCABEZADOS
+========================================= */
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.heading small,
+section > small,
+.section-title small {
+    color: #a47708;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.heading h1 {
+    font-size: 29px;
+    margin: 8px 0 5px;
+    letter-spacing: -.8px;
+}
+
+.heading p {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.version,
+.back {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    background: #fff1c8;
+    color: #795800;
+    padding: 9px 11px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* =========================================
+   5. SECCIÓN PRINCIPAL / HERO
+========================================= */
+
+.hero {
+    background: #171717;
+    color: #fff;
+    border-radius: 11px;
+    padding: 31px 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 215px;
+    overflow: hidden;
+}
+
+.hero small {
+    color: #ffc928;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: 33px;
+    line-height: 1.02;
+    margin: 12px 0;
+}
+
+.hero em {
+    font-style: normal;
+    color: #ffc928;
+}
+
+.hero p {
+    color: #bbb;
+    font-size: 11px;
+    margin-bottom: 19px;
+}
+
+.btn,
+button {
+    display: inline-block;
+    background: #ffc928;
+    color: #171717;
+    border: 0;
+    border-radius: 5px;
+    padding: 11px 15px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.burger {
+    font-size: 115px;
+    position: relative;
+    filter: drop-shadow(0 10px 10px #000);
+}
+
+.burger span {
+    position: absolute;
+    right: -7px;
+    bottom: 0;
+    background: #e63b2e;
+    border-radius: 50%;
+    width: 59px;
+    height: 59px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 9px;
+    font-weight: bold;
+    filter: none;
+}
+
+/* =========================================
+   6. TARJETAS Y ESTADÍSTICAS
+========================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+    margin: 17px 0 30px;
+}
+
+.stats article,
+.bottom article,
+.cols article,
+.info {
+    background: white;
+    border: 1px solid #eae5dc;
+    border-radius: 8px;
+    padding: 17px;
+    box-shadow: 0 6px 20px #20180d08;
+}
+
+.stats small {
+    display: block;
+    color: #888;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.stats strong {
+    display: block;
+    font-size: 23px;
+    margin: 10px 0 5px;
+}
+
+.stats label,
+.stats p {
+    color: #999;
+    font-size: 9px;
+}
+
+/* =========================================
+   7. SECCIONES Y MÓDULOS
+========================================= */
+
+.section {
+    margin: 28px 0;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 13px;
+}
+
+.section-title h2,
+.bottom h2,
+.cols h2,
+.info h2 {
+    font-size: 17px;
+    margin: 6px 0 0;
+}
+
+.section-title > span {
+    font-size: 8px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.modules a {
+    background: white;
+    border: 1px solid #eae5dc;
+    border-radius: 8px;
+    padding: 17px;
+    text-decoration: none;
+    color: #171717;
+    box-shadow: 0 6px 20px #20180d08;
+}
+
+.modules a:hover {
+    border-color: #e6c04e;
+    transform: translateY(-2px);
+}
+
+.modules a > b {
+    display: inline-grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    background: #fff1c8;
+    border-radius: 8px;
+    font-size: 19px;
+}
+
+.modules a > small {
+    float: right;
+    color: #bbb;
+    font-weight: bold;
+}
+
+.modules h3 {
+    font-size: 12px;
+    margin: 13px 0 6px;
+}
+
+.modules p {
+    font-size: 10px;
+    color: #888;
+    min-height: 28px;
+    line-height: 1.5;
+}
+
+.modules strong {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #997000;
+}
+
+/* =========================================
+   8. TABLAS Y ACTIVIDAD
+========================================= */
+
+.bottom {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 13px;
+    margin: 28px 0;
+}
+
+.bottom p,
+.info p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #777;
+}
+
+.bottom table,
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 13px;
+}
+
+th {
+    text-align: left;
+    color: #999;
+    font-size: 8px;
+    letter-spacing: .8px;
+    padding: 10px 7px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    font-size: 10px;
+    padding: 12px 7px;
+    border-bottom: 1px solid #f0ede7;
+}
+
+i {
+    font-style: normal;
+    background: #eee;
+    color: #666;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 8px;
+}
+
+.green {
+    background: #e7f5ec;
+    color: #26774b;
+}
+
+.yellow {
+    background: #fff2c8;
+    color: #8c6500;
+}
+
+.green-text {
+    color: #26774b;
+}
+
+/* =========================================
+   9. INFORMACIÓN Y FORMULARIOS
+========================================= */
+
+.info {
+    margin-top: 15px;
+    background: #fffdf8;
+    border-left: 3px solid #ffc928;
+}
+
+.info h2 {
+    margin-top: 7px;
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+}
+
+.cols article {
+    padding: 21px;
+}
+
+.cols p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.cols label {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+    margin: 14px 0;
+}
+
+.cols input,
+.cols select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e0d7;
+    border-radius: 5px;
+    margin-top: 6px;
+    background: #fafafa;
+}
+
+.hint {
+    font-size: 9px;
+    color: #999;
+}
+
+/* =========================================
+   10. ETIQUETAS Y CATEGORÍAS
+========================================= */
+
+.chips {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.chips span,
+.chips b {
+    font-size: 9px;
+    padding: 8px 12px;
+    border: 1px solid #e5e0d7;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.chips b {
+    background: #171717;
+    color: #fff;
+}
+
+/* =========================================
+   11. PRODUCTOS DEL MENÚ
+========================================= */
+
+.foods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.foods article {
+    background: #fff;
+    border: 1px solid #eae5dc;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.foods article > div {
+    height: 95px;
+    background: #fff1d3;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    font-size: 57px;
+    margin-bottom: 13px;
+}
+
+.foods article small {
+    font-size: 8px;
+    color: #a47708;
+    font-weight: bold;
+}
+
+.foods h3 {
+    font-size: 12px;
+}
+
+.foods p {
+    font-size: 9px;
+    color: #888;
+    min-height: 27px;
+    line-height: 1.5;
+}
+
+.foods article > b {
+    font-size: 12px;
+}
+
+.foods .add {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    border-style: dashed;
+    box-shadow: none;
+}
+
+.foods .add > div {
+    background: transparent;
+    font-size: 32px;
+    color: #aa810d;
+    height: auto;
+}
+
+/* =========================================
+   12. FLUJO DE PROCESOS
+========================================= */
+
+.flow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.flow b {
+    font-size: 9px;
+    background: #fff1c8;
+    padding: 9px;
+    border-radius: 5px;
+}
+
+/* =========================================
+   13. PIE DE PÁGINA
+========================================= */
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 16px 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e9e4db;
+    padding: 17px 0 0;
+    margin-top: 28px;
+    color: #aaa;
+    font-size: 8px;
+}
+
+/* =========================================
+   14. ADAPTACIÓN PARA TABLETAS
+========================================= */
+
+@media (max-width: 1050px) {
+    .sidebar {
+        width: 205px;
+    }
+
+    main {
+        margin-left: 205px;
+        padding: 0 20px;
+    }
+
+    .modules,
+    .foods {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================
+   15. ADAPTACIÓN PARA CELULARES
+========================================= */
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 62px;
+        padding: 15px 6px;
+    }
+
+    .brand {
+        padding: 0 3px 25px;
+    }
+
+    .brand span:not(.logo),
+    .nav-title,
+    .side-bottom {
+        display: none;
+    }
+
+    .sidebar nav a {
+        font-size: 0;
+        text-align: center;
+        padding: 13px 3px;
+    }
+
+    .sidebar nav a::first-letter {
+        font-size: 18px;
+    }
+
+    main {
+        margin-left: 62px;
+        padding: 0 12px;
+    }
+
+    .top {
+        font-size: 9px;
+    }
+
+    .user {
+        font-size: 0;
+    }
+
+    .heading {
+        display: block;
+    }
+
+    .version,
+    .back {
+        display: inline-block;
+        margin-top: 12px;
+    }
+
+    .hero {
+        padding: 23px;
+    }
+
+    .burger {
+        font-size: 72px;
+    }
+
+    .burger span {
+        width: 43px;
+        height: 43px;
+        font-size: 7px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .bottom,
+    .cols {
+        grid-template-columns: 1fr;
+    }
+
+    .modules,
+    .foods {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stats article {
+        padding: 12px;
+    }
+
+    .stats strong {
+        font-size: 18px;
+    }
+
+    footer {
+        display: block;
+        line-height: 2;
+    }
+}
+
+/* =========================================
+   16. ADAPTACIÓN PARA CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 440px) {
+    .modules,
+    .foods {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        display: block;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .section-title > span {
+        display: none;
+    }
+}

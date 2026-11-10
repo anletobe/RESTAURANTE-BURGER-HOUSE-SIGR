@@ -11,7 +11,7 @@ body {
     margin: 0;
     background: #f7f6f2;
     color: #171717;
-    font: 14px Arial, Helvetica, sans-serif;
+    font: 14px 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .shell {
@@ -777,4 +777,6 @@ footer {
     .section-title > span {
         display: none;
     }
+
+    
 }

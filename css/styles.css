@@ -357,18 +357,22 @@ button:hover {
 }
 
 .modules a {
-    background: white;
-    border: 1px solid #eae5dc;
-    border-radius: 8px;
-    padding: 17px;
+    background: #ffffff;
+    border: 1px solid #e5dfd3;
+    border-radius: 12px;
+    padding: 20px;
     text-decoration: none;
     color: #171717;
-    box-shadow: 0 6px 20px #20180d08;
+    box-shadow: 0 4px 14px rgba(32, 24, 13, .06);
+    transition: transform .2s ease,
+                box-shadow .2s ease,
+                border-color .2s ease;
 }
 
 .modules a:hover {
-    border-color: #e6c04e;
-    transform: translateY(-2px);
+    border-color: #ffc928;
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(32, 24, 13, .12);
 }
 
 .modules a > b {

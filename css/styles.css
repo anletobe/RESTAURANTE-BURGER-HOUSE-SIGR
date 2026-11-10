@@ -237,13 +237,25 @@ button {
     display: inline-block;
     background: #ffc928;
     color: #171717;
-    border: 0;
-    border-radius: 5px;
-    padding: 11px 15px;
+    border: 1px solid #e9b817;
+    border-radius: 7px;
+    padding: 12px 18px;
     text-decoration: none;
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease,
+                box-shadow .2s ease;
 }
+
+.btn:hover,
+button:hover {
+    background: #ffda62;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
 
 .burger {
     font-size: 115px;

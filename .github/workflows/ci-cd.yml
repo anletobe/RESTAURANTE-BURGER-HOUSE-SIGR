@@ -12,52 +12,45 @@ on:
 
   workflow_dispatch:
 
-# Permisos mínimos necesarios para las validaciones
 permissions:
   contents: read
 
-# Control de ejecuciones simultáneas
 concurrency:
   group: ci-cd-burger-house
   cancel-in-progress: true
 
 jobs:
+
+  # ==========================================
+  # 1. VALIDACION DE CALIDAD
+  # ==========================================
+
   validacion:
     name: Validacion del proyecto
     runs-on: ubuntu-latest
 
     steps:
-
-      # 1. Descargar el codigo del repositorio
       - name: Descargar codigo
         uses: actions/checkout@v7
 
-      # 2. Configurar Node.js
       - name: Configurar Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 24
 
-      # 3. Verificar estructura del proyecto
       - name: Verificar estructura del proyecto
         run: |
-          echo "Verificando archivos principales..."
-
           test -f index.html
           test -f css/styles.css
           test -f README.md
-
-          echo "Verificando modulos del restaurante..."
-
           test -f pages/usuarios.html
           test -f pages/menu.html
           test -f pages/pedidos.html
           test -f pages/reservas.html
           test -f pages/caja.html
 
-          echo "Estructura del proyecto validada correctamente."
+          echo "Estructura validada correctamente."
 
-      # 4. Verificar cantidad de archivos HTML
       - name: Verificar archivos HTML
         run: |
           count=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
@@ -65,32 +58,71 @@ jobs:
           echo "Archivos HTML encontrados: $count"
 
           if [ "$count" -lt 1 ]; then
-            echo "ERROR: No se encontraron archivos HTML."
+            echo "ERROR: No existen archivos HTML."
             exit 1
           fi
 
-          echo "Verificacion de archivos HTML completada."
-
-      # 5. Validar codigo HTML
       - name: Validar HTML con HTMLHint
-        run: |
-          npx --yes htmlhint "**/*.html"
+        run: npx --yes htmlhint "**/*.html"
 
-      # 6. Validar estilos CSS
       - name: Validar CSS con Stylelint
-        run: |
-          npx --yes stylelint "css/**/*.css"
+        run: npx --yes stylelint "css/**/*.css"
 
-      # 7. Confirmar finalizacion
       - name: Resultado de validaciones
         if: success()
-        run: |
-          echo "=================================="
-          echo "PIPELINE CI/CD BURGER HOUSE SIGR"
-          echo "=================================="
-          echo "Validaciones completadas correctamente."
-          echo "Estructura del proyecto: OK"
-          echo "Archivos HTML: OK"
-          echo "Calidad HTML: OK"
-          echo "Calidad CSS: OK"
-          echo "=================================="
+        run: echo "Validaciones de calidad completadas."
+
+  # ==========================================
+  # 2. DETECCION DE SECRETOS
+  # ==========================================
+
+  deteccion_secretos:
+    name: Seguridad - Gitleaks
+    runs-on: ubuntu-latest
+    needs: validacion
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Descargar historial del repositorio
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detectar secretos y credenciales
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ==========================================
+  # 3. ANALISIS DE SEGURIDAD WEB
+  # ==========================================
+
+  analisis_dast:
+    name: Seguridad web - OWASP ZAP
+    runs-on: ubuntu-latest
+
+    needs:
+      - validacion
+      - deteccion_secretos
+
+    # Se ejecuta manualmente despues de publicar el sitio
+    if: github.event_name == 'workflow_dispatch'
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Analizar sitio web con OWASP ZAP
+        uses: zaproxy/action-baseline@v0.15.0
+        with:
+          target: 'https://anletobe.github.io/RESTAURANTE-BURGER-HOUSE-SIGR/'
+          allow_issue_writing: false
+          fail_action: false
+          artifact_name: zap_scan_burger_house
+
+      - name: Finalizar analisis de seguridad
+        if: success()
+        run: echo "Analisis de seguridad web finalizado."

@@ -5,18 +5,20 @@ on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
+
   workflow_dispatch:
 
+# Permisos mínimos necesarios para las validaciones
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# Control de ejecuciones simultáneas
 concurrency:
-  group: "pages"
+  group: ci-cd-burger-house
   cancel-in-progress: true
 
 jobs:
@@ -25,9 +27,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      # 1. Descargar el codigo del repositorio
       - name: Descargar codigo
         uses: actions/checkout@v7
 
+      # 2. Configurar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      # 3. Verificar estructura del proyecto
       - name: Verificar estructura del proyecto
         run: |
           echo "Verificando archivos principales..."
@@ -36,7 +47,7 @@ jobs:
           test -f css/styles.css
           test -f README.md
 
-          echo "Verificando modulos del sistema..."
+          echo "Verificando modulos del restaurante..."
 
           test -f pages/usuarios.html
           test -f pages/menu.html
@@ -44,8 +55,9 @@ jobs:
           test -f pages/reservas.html
           test -f pages/caja.html
 
-          echo "Estructura del proyecto validada."
+          echo "Estructura del proyecto validada correctamente."
 
+      # 4. Verificar cantidad de archivos HTML
       - name: Verificar archivos HTML
         run: |
           count=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
@@ -57,4 +69,28 @@ jobs:
             exit 1
           fi
 
-          echo "Validacion HTML completada."
+          echo "Verificacion de archivos HTML completada."
+
+      # 5. Validar codigo HTML
+      - name: Validar HTML con HTMLHint
+        run: |
+          npx --yes htmlhint "**/*.html"
+
+      # 6. Validar estilos CSS
+      - name: Validar CSS con Stylelint
+        run: |
+          npx --yes stylelint "css/**/*.css"
+
+      # 7. Confirmar finalizacion
+      - name: Resultado de validaciones
+        if: success()
+        run: |
+          echo "=================================="
+          echo "PIPELINE CI/CD BURGER HOUSE SIGR"
+          echo "=================================="
+          echo "Validaciones completadas correctamente."
+          echo "Estructura del proyecto: OK"
+          echo "Archivos HTML: OK"
+          echo "Calidad HTML: OK"
+          echo "Calidad CSS: OK"
+          echo "=================================="

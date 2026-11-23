@@ -1,0 +1,60 @@
+
+name: CI/CD - BURGER HOUSE SIGR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  validacion:
+    name: Validacion del proyecto
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Verificar estructura del proyecto
+        run: |
+          echo "Verificando archivos principales..."
+
+          test -f index.html
+          test -f css/styles.css
+          test -f README.md
+
+          echo "Verificando modulos del sistema..."
+
+          test -f pages/usuarios.html
+          test -f pages/menu.html
+          test -f pages/pedidos.html
+          test -f pages/reservas.html
+          test -f pages/caja.html
+
+          echo "Estructura del proyecto validada."
+
+      - name: Verificar archivos HTML
+        run: |
+          count=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
+
+          echo "Archivos HTML encontrados: $count"
+
+          if [ "$count" -lt 1 ]; then
+            echo "ERROR: No se encontraron archivos HTML."
+            exit 1
+          fi
+
+          echo "Validacion HTML completada."
